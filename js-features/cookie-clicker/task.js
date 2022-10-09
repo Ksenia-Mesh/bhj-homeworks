@@ -9,3 +9,6 @@ cookie.onclick = function() {
         cookie.width = 200;
     }
 }
+
+
+// img.width = ++counter.textContent % 2 ? 150 : 200
