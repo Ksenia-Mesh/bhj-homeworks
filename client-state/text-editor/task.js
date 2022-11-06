@@ -1,12 +1,8 @@
-let editor = document.getElementById("editor");
+const editor = document.getElementById('editor');
 
-if (localStorage.editText !== null) {
-  editor.value = localStorage.editText;
+function restoreForm() {
+    editor.value = localStorage.getItem("savedText");
+    editor.addEventListener("keypress", function() {localStorage.setItem("savedText", textField.value);});    
 }
-window.addEventListener("unload", event => {
 
-  let textTextArea = editor.value;
-  if (textTextArea !== undefined) {
-  localStorage.setItem("editText", textTextArea);
-  }  
-})
+document.addEventListener("DOMContentLoaded", restoreForm);
